@@ -1,0 +1,10 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= projects_user_path(@user) %>">
+    <strong id="projects" class="stat">
+      <%= @user.projects.count %>
+    </strong>
+    projects
+  </a>
+</div>
+
