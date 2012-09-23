@@ -2,12 +2,15 @@ PrototypeApp2::Application.routes.draw do
   resources :users
   resources :projects
   resources :sessions, only: [:new, :create, :destroy]
+  
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/newproject', to: 'projects#new'
+  
+  match 'documents/upload', to: 'documents#upload'
   
   root to: 'static_pages#home'
   

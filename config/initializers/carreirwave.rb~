@@ -1,0 +1,7 @@
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    :provider                         => 'Google',
+    :google_storage_access_key_id     => ' 	00b4903a971ccdba54bd7a55fe01225fb3819fe3fd82ee4ecea19bb5cdb40d4c'
+  	}
+  config.fog_directory = 'prototype_app2'
+end
