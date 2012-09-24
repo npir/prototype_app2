@@ -1,0 +1,1 @@
+crocodoc = Crocodoc::API.new(:token => 'your-api-token')

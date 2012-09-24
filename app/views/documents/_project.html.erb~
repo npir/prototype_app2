@@ -1,0 +1,3 @@
+<li>
+  <%= link_to document.name, document %>
+</li>

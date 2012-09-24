@@ -1,0 +1,47 @@
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        
+      </h1>
+    </section>
+  </aside>
+ 
+
+<div class="span10">
+<table class="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Project Name</th>
+<th>Decsiption</th>
+<th>Documents</th>
+<th>Created on</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%= @project.id %></td>
+<td><%= @project.name %></td>
+<td><%= @project.description %></td>
+<td><%= link_to @project.document., @project.document.url if @project.document?%> </td>
+<td><%= @project.created_at %></td>
+<td><% if current_user?(@project.user) %>
+    <%= link_to "delete", @project, method: :delete,
+                                     data: { confirm: 'You sure?' },
+                                     title: @project.name %>
+  <% end %>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+<%= link_to "Create a new Project!", newproject_path, 
+                                class: "btn btn-large btn-primary" %>  
+
+</div>
+</div>
+
+   
+
