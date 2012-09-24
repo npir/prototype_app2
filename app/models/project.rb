@@ -19,4 +19,12 @@ class Project < ActiveRecord::Base
   validates :name, presence: true
   
   default_scope order: 'projects.created_at DESC'
+  
+  def to_jq_upload
+    {
+      "name" => read_attribute(:document),
+      "url" => document.url,
+      "delete_type" => "DELETE" 
+    }
+  end
 end

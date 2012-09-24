@@ -10,6 +10,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'crocodoc-ruby', :require => 'crocodoc'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem "jquery-fileupload-rails"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

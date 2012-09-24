@@ -11,9 +11,9 @@
 #
 
 class Project < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :document, :remote_document_url
   belongs_to :user
-  has_many :documents
+  mount_uploader :document, DocumentUploader
   
   validates :user_id, presence: true
   validates :name, presence: true
