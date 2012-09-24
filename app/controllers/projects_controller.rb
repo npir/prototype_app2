@@ -6,21 +6,10 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(params[:project])
     if @project.save
-    	respond_to do |format|
-        format.html {  
-          render :json => [@project.to_jq_upload].to_json, 
-          :content_type => 'text/html',
-          :layout => false
-        }
-        format.json {  
-          render :json => [@project.to_jq_upload].to_json			
-        }
-      end
       flash[:success] = "Project created!"
       redirect_to root_url
     else
-    	render :json => [{:error => "custom_failure"}], :status => 304
-      render 'static_pages/home'
+    	render 'static_pages/home'
     end
   end
 
